@@ -3,6 +3,15 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Ignore folders:
+data/
+models/
+
+# Ignore Pipenv files (if you're using requirements.txt instead)
+Pipfile
+Pipfile.lock
+
+
 # C extensions
 *.so
 
