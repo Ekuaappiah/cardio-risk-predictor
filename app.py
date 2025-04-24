@@ -26,9 +26,9 @@ model = load_model()
 
 # --- UI Design ---
 def main():
-    st.markdown("<h1 style='text-align: center; color: #d63384;'>❤️ Heart Disease Risk Assessment</h1>",
+    st.markdown("<h1 style='text-align: center; color: #d63384;'>❤️ Heart Disease Presence Assessment</h1>",
                 unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center;'>Enter patient health metrics to assess cardiovascular risk</p>",
+    st.markdown("<p style='text-align: center;'>Enter patient health metrics to assess the likelihood of heart disease</p>",
                 unsafe_allow_html=True)
     st.markdown("---")
 
@@ -113,7 +113,7 @@ def create_gauge_chart(probability):
         mode="gauge+number",
         value=probability * 100,
         domain={'x': [0, 1], 'y': [0, 1]},
-        title={'text': "Risk Level", 'font': {'size': 24, 'color': PRIMARY_COLOR}},
+        title={'text': "Prediction Probability", 'font': {'size': 24, 'color': PRIMARY_COLOR}},
         gauge={
             'axis': {'range': [None, 100], 'tickwidth': 1, 'tickcolor': "gray"},
             'bar': {'color': PRIMARY_COLOR},
@@ -142,7 +142,7 @@ def create_gauge_chart(probability):
 
 
 def display_results(probability):
-    st.markdown("### 🧠 Clinical Risk Assessment")
+    st.markdown("### 🧠 Prediction Results")
 
     create_gauge_chart(probability)
 

@@ -2,7 +2,7 @@
 
 ## 📌 Overview
 
-This project leverages machine learning techniques to predict whether an individual is likely to develop heart disease based on various clinical and demographic attributes.
+This project applies machine learning algorithms to predict the presence of heart disease in individuals using clinical and demographic data. The primary goal is to provide a reliable tool for early identification of at-risk patients, aiding clinical decision-making.
 
 Dataset used: **[Heart Disease Dataset on Kaggle](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset/data)**  
 Includes features like age, sex, chest pain type, blood pressure, cholesterol levels, and ECG results.
@@ -51,7 +51,7 @@ The following models have been implemented and evaluated:
 
 
 ### Model Used:
-- ✅ Random Forest Classifier (primary)
+- Random Forest Classifier (primary)
 
 ### Workflow:
 1. **Data Preprocessing**
@@ -152,12 +152,14 @@ Visit the running Streamlit app to:
 ---
 
 ## 🖼️ Screenshots
+### HOW TO USE APP
+![Input Form](images/streamlit-app-screenshot-1.jpeg)
 
 ### User Input Form
 ![Input Form](images/streamlit-app-screenshot-2.jpeg)
 
 ### Prediction Output  
-![Prediction Result](images/streamlit-app-screenshot-1.jpeg)
+![Prediction Result](images/streamlit-app-screenshot-3.jpeg)
 
 
 ## 🔧 Tech Stack
