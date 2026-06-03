@@ -26,7 +26,7 @@ The Power BI dashboard has three pages:
 
 This page gives a high-level summary of the dataset, including total patients, heart disease cases, heart disease rate and average age.
 
-![Power BI Overview](Power Bi/page 1.png)
+![Power BI Overview](images/page-1.png)
 
 ---
 
@@ -35,7 +35,7 @@ This page gives a high-level summary of the dataset, including total patients, h
 This page explores key health readings and symptoms such as cholesterol level, resting blood pressure, maximum heart 
 rate and chest pain type
 
-![Power BI Risk Factor Analysis](Power Bi/page 2.png)
+![Power BI Risk Factor Analysis](images/page-2.png)
 
 ---
 
@@ -44,9 +44,9 @@ rate and chest pain type
 This page focuses on test-related patterns such as ST slope type and thalassemia result. It also includes filters 
 for exploring patient groups.
                                       
-![Power BI Test Patterns](Power Bi/page 3-no_filter.png)
+![Power BI Test Patterns](images/page-3-no_filter.png)
 
-![Power BI Test Patterns](Power Bi/page 3-filter_applied.png)
+![Power BI Test Patterns](images/page-3-filter_applied.png)
 
 ---
 
