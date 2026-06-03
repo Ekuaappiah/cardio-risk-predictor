@@ -1,94 +1,142 @@
-# 🫀 Cardio-Risk-Predictor: Heart Disease Prediction Model
+# Cardio-Risk Predictor: Heart Disease Analytics & Prediction
 
-## 📌 Overview
+This project combines **Power BI analytics** and **machine learning** to explore heart disease patterns and predict whether heart disease is present in a patient record.
 
-This project applies machine learning algorithms to predict the presence of heart disease in individuals using clinical and demographic data. The primary goal is to provide a reliable tool for early identification of at-risk patients, aiding clinical decision-making.
-
-Dataset used: **[Heart Disease Dataset on Kaggle](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset/data)**  
-Includes features like age, sex, chest pain type, blood pressure, cholesterol levels, and ECG results.
+The project uses the **[Heart Disease Dataset on Kaggle](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset/data)**. The dataset contains patient health information such as age, gender, chest pain type, blood pressure, cholesterol, maximum heart rate, ECG results, and heart disease status.
 
 ---
 
-## 🧾 Dataset Description
+## Project Overview
 
-The dataset includes the following features:
+This is a full analytics and machine learning project with two main parts:
 
-- `age`: Age of the person  
-- `sex`: Gender (1 = male, 0 = female)  
-- `cp`: Chest pain type (categorical: 0–3)  
-- `trestbps`: Resting blood pressure (mm Hg)  
-- `chol`: Serum cholesterol (mg/dl)  
-- `fbs`: Fasting blood sugar > 120 mg/dl (1 = true, 0 = false)  
-- `restecg`: Resting ECG results (categorical)  
-- `thalach`: Maximum heart rate achieved  
-- `exang`: Exercise-induced angina (1 = yes, 0 = no)  
-- `oldpeak`: ST depression induced by exercise  
-- `slope`: Slope of peak ST segment (categorical)  
-- `ca`: Number of major vessels colored by fluoroscopy  
-- `thal`: Thalassemia (categorical)  
-- `target`: 1 = heart disease, 0 = no heart disease  
+1. **Power BI Dashboard**  
+   Used to explore heart disease patterns, compare patient groups, and understand key risk indicators.
+
+2. **Machine Learning Model**  
+   Used to train and evaluate models that predict whether heart disease is present.
 
 ---
 
-## 🎯 Objective
+## Power BI Dashboard
 
-To develop a machine learning model that predicts the presence of heart disease and deploy it via a web interface for use in clinical decision support.
+The Power BI dashboard has three pages:
 
----
+### 1. Overview
 
-## 🧠 Models & Approach
+This page gives a high-level summary of the dataset, including total patients, heart disease cases, heart disease rate and average age.
 
-## Models Implemented
-
-The following models have been implemented and evaluated:
-
-1. **Logistic Regression** (Classification)
-2. **Support Vector Machine (SVM)** (Classification)
-3. **K-Nearest Neighbors (KNN)** (Classification)
-4. **Random Forest Classifier** (Classification)
-5. **Decision Tree Regressor** (Regression)
-6. **Random Forest Regressor** (Regression)
-
-
-### Model Used:
-- Random Forest Classifier (primary)
-
-### Workflow:
-1. **Data Preprocessing**
-   - Handle missing values
-   - Encode categorical features
-   - Train/test split (80/20)
-
-2. **Model Training**
-   - Test multiple algorithms
-   - Optimize with GridSearchCV
-
-3. **Evaluation Metrics**
-   - Accuracy
-   - Precision, Recall, F1-Score  
-   - Learning Curve 
-
-4. **Prediction**
-   - Use the trained model to predict heart disease risk for new patients
+![Power BI Overview](Power Bi/page 1.png)
 
 ---
 
-## ✅ Results
+### 2. Risk Factor Analysis
 
-The Random Forest model delivered the best overall performance and is saved for future inference and deployment in clinical applications.
+This page explores key health readings and symptoms such as cholesterol level, resting blood pressure, maximum heart 
+rate and chest pain type
+
+![Power BI Risk Factor Analysis](Power Bi/page 2.png)
 
 ---
 
-## 🛠️ Installation Guide
+### 3. Test Patterns
 
-### 1. Clone this Repository
+This page focuses on test-related patterns such as ST slope type and thalassemia result. It also includes filters 
+for exploring patient groups.
+                                      
+![Power BI Test Patterns](Power Bi/page 3-no_filter.png)
+
+![Power BI Test Patterns](Power Bi/page 3-filter_applied.png)
+
+---
+
+## 🧠 Machine Learning
+
+Several models were trained and compared:
+
+- Logistic Regression
+- Support Vector Machine
+- K-Nearest Neighbors
+- Random Forest Classifier
+- Decision Tree Regressor
+- Random Forest Regressor
+
+The **Random Forest Classifier** was selected as the main model because it gave the best overall performance for predicting heart disease status.
+
+---
+
+## 🔄 Workflow
+
+The project followed this process:
+
+1. Loaded and prepared the dataset
+2. Cleaned and renamed columns for easier understanding
+3. Explored the data using Power BI
+4. Built a 3-page interactive dashboard
+5. Trained and tested multiple machine learning models
+6. Selected the best-performing model
+7. Built a Streamlit app for prediction
+
+---
+
+## ✅ Key Features
+
+- Interactive Power BI dashboard
+- Cleaned and renamed dataset columns
+- DAX measures for KPIs and patient counts
+- Visual analysis of heart disease patterns
+- Machine learning model training and evaluation
+- Streamlit app for heart disease prediction
+- Docker support
+
+---
+
+## 🖼️ Streamlit App Screenshots
+
+### App Guide
+
+![Streamlit App Guide](images/streamlit-app-screenshot-1.jpeg)
+
+---
+
+### User Input Form
+
+![User Input Form](images/streamlit-app-screenshot-2.jpeg)
+
+---
+
+### Prediction Output
+
+![Prediction Output](images/streamlit-app-screenshot-3.jpeg)
+
+---
+
+## 🛠️ Tech Stack
+
+- Python
+- pandas
+- numpy
+- scikit-learn
+- xgboost
+- matplotlib
+- seaborn
+- Power BI
+- Streamlit
+- Docker
+- Git and GitHub
+
+---
+
+## 🚀 How to Run the Project
+
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/Ekuaappiah/cardio-risk-predictor.git
 cd cardio-risk-predictor
-```
+````
 
-### 2. Set Up a Virtual Environment
+### 2. Create and activate a virtual environment
 
 ```bash
 python3 -m venv venv
@@ -96,90 +144,57 @@ source venv/bin/activate      # macOS/Linux
 venv\Scripts\activate         # Windows
 ```
 
-### 3. Install Dependencies
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the pipeline code for model
+### 4. Run the model pipeline
 
 ```bash
 python heart_disease_pipeline.py
 ```
 
-### 5. Run the App
+### 5. Run the Streamlit app
 
 ```bash
 streamlit run app.py
 ```
 
-The application will launch at:  
-[http://localhost:8501](http://localhost:8501)
+The app will open at:
+
+```text
+http://localhost:8501
+```
 
 ---
 
-## Containerizing the Heart Disease Predictor with Docker
+## 🐳 Docker
 
-This project can be containerized using Docker for easy deployment and execution. Follow the steps below to build and run the Docker container:
+Build the Docker image:
 
-### Prerequisites
-Make sure you have Docker installed on your machine. You can download and install Docker from [here](https://www.docker.com/get-started).
+```bash
+docker build -t heart-disease-predictor .
+```
 
-### Steps to Containerize
+Run the container:
 
-1. **Build the Docker Image**
-
-   To build the Docker image for the project, navigate to the project directory and run the following command in the terminal:
-   
-   ```bash
-   docker build -t heart-disease-predictor .
-2. **Run the Docker Container**
-
-   Once the image is built, you can run the container with the following command:
-   
-   ```bash
-   docker run -it --rm heart-disease-predictor
+```bash
+docker run -it --rm heart-disease-predictor
+```
 
 
-## 💻 Usage
+## Author
 
-Visit the running Streamlit app to:
-- Enter patient data
-- View risk prediction results
-- Understand model interpretation
+**Emmanuella Appiah**
+[LinkedIn](https://www.linkedin.com/in/emmanuella-appiah-16a215213)
 
 ---
 
-## 🖼️ Screenshots
-### HOW TO USE APP
-![Input Form](images/streamlit-app-screenshot-1.jpeg)
-
-### User Input Form
-![Input Form](images/streamlit-app-screenshot-2.jpeg)
-
-### Prediction Output  
-![Prediction Result](images/streamlit-app-screenshot-3.jpeg)
-
-
-## 🔧 Tech Stack
-
-- **Languages/Libraries**: Python, pandas, numpy, scikit-learn, xgboost, matplotlib, seaborn  
-- **Web App**: Streamlit  
-- **Environment**: Jupyter Notebook, Pycharm  
-- **Version Control**: Git & GitHub
-
----
-
-## 👤 Author
-
-**Emmanuella – Data Scientist**  
-[LinkedIn](https://www.linkedin.com/in/emmanuella-appiah-16a215213) 
-
----
-
-## 📜 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
 
----
+```
+```
